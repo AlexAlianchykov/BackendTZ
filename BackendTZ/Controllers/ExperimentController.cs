@@ -81,7 +81,8 @@ namespace BackendTZ.Controllers
                     catch (Exception ex)
                     {
                         transaction.Rollback();
-                        return BadRequest("error executing transaction (experiment = button_color)");
+                        _logger.LogError("error executing transaction (experiment = button_color)");
+                        return BadRequest();
                     }
                    
                 }
